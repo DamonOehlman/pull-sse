@@ -8,21 +8,21 @@ var sse = require('../..');
 routes.define('/values', function(req, res) {
   pull(
     pull.values(['a', 'b', 'c']),
-    sse(res).ok()
+    sse(res)
   );
 });
 
 routes.define('/values-numeric', function(req, res) {
   pull(
     pull.values([1, 2, 3]),
-    sse(res).ok()
+    sse(res)
   );
 });
 
 routes.define('/objects', function(req, res) {
   pull(
     pull.values([{ a: 1 }, { b: 2 }]),
-    sse(res).ok()
+    sse(res)
   );
 });
 
