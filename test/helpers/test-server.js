@@ -26,6 +26,25 @@ routes.define('/objects', function(req, res) {
   );
 });
 
+routes.define('/error', function(req, res) {
+  pull(
+    pull.Source(function() {
+      return function(end, cb) {
+        if (end) {
+          return cb(end);
+        }
+
+        setTimeout(function() {
+          cb(new Error('broken'));
+        }, 500);
+      }
+    })(),
+
+
+    sse(res)
+  );
+});
+
 server.on('request', function(req, res) {
   var route = routes.match(req.url);
   if (route.perfect) {

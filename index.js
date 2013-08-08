@@ -73,12 +73,25 @@ module.exports = function(target) {
 }
 
 var output = pull.Sink(function(read, res) {
-  res.writeHead(200, {
-    'Content-type': 'text/event-stream'
-  });
+  var writtenStatus = false;
 
   read(null, function next(end, data) {
+    // if we have not yet written the status do that now
+    if (! writtenStatus) {
+      res.writeHead(!end ? 200 : (end instanceof Error ? 500 : 404), {
+        'Content-type': !end ? 'text/event-stream' : 'text/plain'
+      });
+
+      // flag as status written
+      writtenStatus = true;
+    }
+
     if (end) {
+      // if we have an error, write that to the response
+      if (end instanceof Error) {
+        res.write('error: ' + end.toString() + '\n\n');
+      }
+
       return res.end();
     }
 
