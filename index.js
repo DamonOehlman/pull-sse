@@ -48,7 +48,7 @@
   });
   ```
 
-  For more examples, I'd recommend trawling through the [tests](/tests).
+  For more examples, I'd recommend trawling through the [examples](/examples).
 **/
 
 var http = require('http');

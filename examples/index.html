@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>SSE Test</title>
+</head>
+<body>
+<script>
+var source = new EventSource('/values');
+
+source.addEventListener('message', function(evt) {
+  console.log(evt.data);
+});
+</script>
+</body>
+</html>

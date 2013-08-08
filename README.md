@@ -44,4 +44,4 @@ server.on('request', function(req, res) {
 });
 ```
 
-For more examples, I'd recommend trawling through the [tests](/tests).
+For more examples, I'd recommend trawling through the [examples](/examples).
