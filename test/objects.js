@@ -10,17 +10,11 @@ test('start the test server', function(t) {
   });
 });
 
-test('string values test', function(t) {
-  checkRequest('/values', ['a', 'b', 'c'])(t);
-});
-
-test('numeric values test', function(t) {
-  checkRequest('/values-numeric', [1, 2, 3])(t);
+test('simple objects test', function(t) {
+  checkRequest('/objects', [{ a: 1 }, { b: 2 }])(t);
 });
 
 test('stop the test server', function(t) {
   t.plan(1);
   t.ok(testServer.stop(), 'stopped');
 });
-
-

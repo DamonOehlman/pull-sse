@@ -4,7 +4,8 @@
   "description": "Server-sent events magic for pull-streams",
   "main": "index.js",
   "scripts": {
-    "test": "node test/all.js"
+    "test": "node test/all.js",
+    "gendocs": "sourcecat | emu > README.md"
   },
   "repository": {
     "type": "git",

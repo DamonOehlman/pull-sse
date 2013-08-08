@@ -7,11 +7,25 @@
   Use pull-streams to make
   [server sent events](http://www.w3.org/TR/eventsource/) wonderful.
 
+  [
+  ![Build Status]
+  (https://travis-ci.org/DamonOehlman/pull-sse.png?branch=master)
+  ](https://travis-ci.org/DamonOehlman/pull-sse)
+
 **/
 
+var http = require('http');
 var pull = require('pull-core');
 
-module.exports = function(res) {
+module.exports = function(target) {
+  if (target instanceof http.ServerResponse) {
+    return output(target);
+  }
+
+  return input(target);
+}
+
+function output(res) {
   return {
     error: function(err) {
       // write the error
@@ -47,4 +61,8 @@ module.exports = function(res) {
       })();
     }
   }
-};
+}
+
+function input(req) {
+  throw new Error('not yet implemented');
+}

@@ -9,7 +9,12 @@ module.exports = function(url, expected) {
       t.equal(res.headers['content-type'], 'text/event-stream');
 
       res.on('data', function(data) {
-        t.equal(data.toString(), 'data: ' + expected.shift());
+        var val = expected.shift();
+        if (typeof val == 'object') {
+          val = JSON.stringify(val);
+        }
+
+        t.equal(data.toString(), 'data: ' + val);
       });
 
       res.on('end', function() {

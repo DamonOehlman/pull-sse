@@ -12,6 +12,20 @@ routes.define('/values', function(req, res) {
   );
 });
 
+routes.define('/values-numeric', function(req, res) {
+  pull(
+    pull.values([1, 2, 3]),
+    sse(res).ok()
+  );
+});
+
+routes.define('/objects', function(req, res) {
+  pull(
+    pull.values([{ a: 1 }, { b: 2 }]),
+    sse(res).ok()
+  );
+});
+
 server.on('request', function(req, res) {
   var route = routes.match(req.url);
   if (route.perfect) {
