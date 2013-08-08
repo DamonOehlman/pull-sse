@@ -12,6 +12,11 @@
   (https://travis-ci.org/DamonOehlman/pull-sse.png?branch=master)
   ](https://travis-ci.org/DamonOehlman/pull-sse)
 
+  [
+  ![browser support]
+  (https://ci.testling.com/DamonOehlman/pull-sse.png)
+  ](https://ci.testling.com/DamonOehlman/pull-sse)
+
 **/
 
 var http = require('http');
