@@ -34,7 +34,7 @@ server.on('request', function(req, res) {
 });
 
 exports.start = function(callback) {
-  server.listen(3000, callback);
+  server.listen(parseInt(process.env.PORT || 3000, 10), callback);
 };
 
 exports.stop = function() {

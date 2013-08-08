@@ -42,7 +42,7 @@ var output = pull.Sink(function(read, res) {
 
     // if we have simple data, then let it go through
     if (typeof data != 'function' && typeof data != 'undefined') {
-      res.write('data: ' + data);
+      res.write('data: ' + data + '\n\n');
     }
 
     // read again

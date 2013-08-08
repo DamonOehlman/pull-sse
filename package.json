@@ -32,5 +32,10 @@
   },
   "dependencies": {
     "pull-core": "~1.0.0"
+  },
+
+  "testling": {
+    "files": "test/browser/all.js",
+    "server": "test/browser/server.js"
   }
 }
