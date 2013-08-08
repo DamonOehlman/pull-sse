@@ -44,4 +44,14 @@ server.on('request', function(req, res) {
 });
 ```
 
+This could then be consumed in the browser, very simply:
+
+```js
+var source = new EventSource('/values');
+
+source.addEventListener('message', function(evt) {
+  console.log(evt.data);
+});
+```
+
 For more examples, I'd recommend trawling through the [examples](/examples).
