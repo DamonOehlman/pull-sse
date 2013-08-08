@@ -1,0 +1,35 @@
+{
+  "name": "pull-sse",
+  "version": "0.0.0",
+  "description": "Server-sent events magic for pull-streams",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/all.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DamonOehlman/pull-sse.git"
+  },
+  "keywords": [
+    "pull-stream",
+    "streams",
+    "sse",
+    "server",
+    "sent",
+    "events"
+  ],
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DamonOehlman/pull-sse/issues"
+  },
+  "devDependencies": {
+    "tape": "~1.0.4",
+    "pull-stream": "~2.20.1",
+    "mapleTree": "~0.5.0-1",
+    "hyperquest": "~0.1.7"
+  },
+  "dependencies": {
+    "pull-core": "~1.0.0"
+  }
+}
