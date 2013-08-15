@@ -3,23 +3,13 @@
 Use pull-streams to make
 [server sent events](http://www.w3.org/TR/eventsource/) wonderful.
 
-[
-![Build Status]
-(https://travis-ci.org/DamonOehlman/pull-sse.png?branch=master)
-](https://travis-ci.org/DamonOehlman/pull-sse)
 
-[
-![browser support]
-(https://ci.testling.com/DamonOehlman/pull-sse.png)
-](https://ci.testling.com/DamonOehlman/pull-sse)
+[![NPM](https://nodei.co/npm/pull-sse.png)](https://nodei.co/npm/pull-sse/)
 
-## Installation
+[![Build Status](https://travis-ci.org/DamonOehlman/pull-sse.png?branch=master)](https://travis-ci.org/DamonOehlman/pull-sse)
 
-Install into your project:
+[![browser support](https://ci.testling.com/DamonOehlman/pull-sse.png)](https://ci.testling.com/DamonOehlman/pull-sse)
 
-```
-npm install pull-sse --save
-```
 
 ## Usage
 
@@ -42,6 +32,8 @@ server.on('request', function(req, res) {
     );
   }
 });
+
+server.listen(3000);
 ```
 
 This could then be consumed in the browser, very simply:
