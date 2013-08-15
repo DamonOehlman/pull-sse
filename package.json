@@ -35,6 +35,13 @@
   },
   "testling": {
     "files": "test/browser/all.js",
-    "server": "test/browser/server.js"
+    "server": "test/browser/server.js",
+    "browsers": {
+      "ie": [ "latest" ],
+      "ff": [ "latest", "nightly" ],
+      "chrome": [ "latest", "canary" ],
+      "opera": [ "latest", "next" ],
+      "safari": [ "latest" ]
+    }
   }
 }
