@@ -1,6 +1,6 @@
 {
   "name": "pull-sse",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Server-sent events magic for pull-streams",
   "main": "index.js",
   "scripts": {
@@ -37,11 +37,24 @@
     "files": "test/browser/all.js",
     "server": "test/browser/server.js",
     "browsers": {
-      "ie": [ "latest" ],
-      "ff": [ "latest", "nightly" ],
-      "chrome": [ "latest", "canary" ],
-      "opera": [ "latest", "next" ],
-      "safari": [ "latest" ]
+      "ie": [
+        "latest"
+      ],
+      "ff": [
+        "latest",
+        "nightly"
+      ],
+      "chrome": [
+        "latest",
+        "canary"
+      ],
+      "opera": [
+        "latest",
+        "next"
+      ],
+      "safari": [
+        "latest"
+      ]
     }
   }
 }
