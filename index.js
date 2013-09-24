@@ -41,7 +41,9 @@ var output = pull.Sink(function(read, res) {
     // if we have not yet written the status do that now
     if (! writtenStatus) {
       res.writeHead(!end ? 200 : (end instanceof Error ? 500 : 404), {
-        'Content-type': !end ? 'text/event-stream' : 'text/plain'
+        'Content-type': !end ? 'text/event-stream' : 'text/plain',
+        'cache-control': 'no-cache',
+        'connection': 'keep-alive'
       });
 
       // flag as status written
