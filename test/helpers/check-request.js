@@ -14,7 +14,7 @@ module.exports = function(url, expected) {
           val = JSON.stringify(val);
         }
 
-        t.equal(data.toString(), 'data: ' + val + '\n\n');
+        t.equal(data.toString(), 'data: ' + (val + '').split('\n').join('\ndata: ') + '\n\n');
       });
 
       res.on('end', function() {

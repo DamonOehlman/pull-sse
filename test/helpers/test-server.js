@@ -19,6 +19,13 @@ routes.define('/values-numeric', function(req, res) {
   );
 });
 
+routes.define('/multiline', function(req, res) {
+  pull(
+    pull.values(['a\nb', 'b\nc']),
+    sse(res)
+  );
+});
+
 routes.define('/objects', function(req, res) {
   pull(
     pull.values([{ a: 1 }, { b: 2 }]),
