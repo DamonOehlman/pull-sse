@@ -1,6 +1,6 @@
 {
   "name": "pull-sse",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Server-sent events magic for pull-streams",
   "main": "index.js",
   "scripts": {
