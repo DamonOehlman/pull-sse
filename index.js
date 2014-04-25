@@ -23,6 +23,7 @@
   For more examples, I'd recommend trawling through the [examples](/examples).
 **/
 
+var debug = require('debug')('pull-sse');
 var http = require('http');
 var pull = require('pull-core');
 
@@ -51,6 +52,7 @@ var output = pull.Sink(function(read, res) {
     }
 
     if (end) {
+      debug('encountered stream end: ', end);
       // if we have an error, write that to the response
       if (end instanceof Error) {
         res.write('error: ' + end.toString() + '\n\n');

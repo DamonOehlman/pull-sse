@@ -31,7 +31,8 @@
     "hyperquest": "~0.3"
   },
   "dependencies": {
-    "pull-core": "^1"
+    "pull-core": "^1",
+    "debug": "~0.8"
   },
   "testling": {
     "files": "test/browser/all.js",
