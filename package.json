@@ -25,13 +25,13 @@
     "url": "https://github.com/DamonOehlman/pull-sse/issues"
   },
   "devDependencies": {
-    "tape": "~1.0.4",
-    "pull-stream": "~2.20.1",
-    "mapleTree": "~0.5.0-1",
-    "hyperquest": "~0.1.7"
+    "tape": "^2",
+    "pull-stream": "^2",
+    "mapleTree": "~0.5",
+    "hyperquest": "~0.3"
   },
   "dependencies": {
-    "pull-core": "~1.0.0"
+    "pull-core": "^1"
   },
   "testling": {
     "files": "test/browser/all.js",
