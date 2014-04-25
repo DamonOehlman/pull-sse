@@ -35,8 +35,19 @@ module.exports = function(target) {
   return input(target);
 };
 
-var output = pull.Sink(function(read, res) {
+var output = pull.Sink(function(read, res, opts) {
   var writtenStatus = false;
+  var keepalive = (opts || {}).keepalive;
+  var kaTimer;
+
+  function writeKeepalive() {
+    res.write(':keepalive\n');
+  }
+
+  // if keepalive has not been set and does not have a value, then use the default
+  if ((! keepalive) && (keepalive !== 0)) {
+    keepalive = 15000;
+  }
 
   read(null, function next(end, data) {
     // if we have not yet written the status do that now
@@ -50,6 +61,9 @@ var output = pull.Sink(function(read, res) {
       // flag as status written
       writtenStatus = true;
     }
+
+    // clear the keepalive interval
+    clearInterval(kaTimer);
 
     if (end) {
       debug('encountered stream end: ', end);
@@ -70,6 +84,9 @@ var output = pull.Sink(function(read, res) {
     if (typeof data != 'function' && typeof data != 'undefined') {
       res.write('data: ' + (data + '').split('\n').join('\ndata: ') + '\n\n');
     }
+
+    // start the keepalive interval
+    kaTimer = setInterval(writeKeepalive, keepalive);
 
     // read again
     read(null, next);
