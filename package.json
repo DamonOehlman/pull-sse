@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "pull-core": "^1",
-    "debug": "~0.8"
+    "debug": "~3.1.0"
   },
   "testling": {
     "files": "test/browser/all.js",
